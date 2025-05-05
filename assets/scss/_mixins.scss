@@ -167,7 +167,6 @@
       opacity: 0.3;
     }
 }
-
 // mixin for side-square
 @mixin side-square($img-path: '../../../assets/images/side-square.svg', $width: 344px, $height: 344px, $top: 0, $left: 0 , $right: 0) {
     &::after {
@@ -212,7 +211,6 @@
     z-index: -1;
   }
 }
-
 
 //rounded green background 
 @mixin rounded-green-bg(

@@ -210,47 +210,47 @@
         /*seo-right col style*/
         .seo-right 
         {
-            max-width: 100%;
+          max-width: 100%;
+          position: relative;
+          @include dotted-background(-40px, auto, auto, -30px);
+          @media (max-width: 1420px) 
+          {
+              &::after
+              {
+                  display: none;
+              }
+          }
+      
+          @media (max-width:1500px)
+          {
+            margin-left: auto;
+            margin-right: auto;
+          }
+      
+          .seo-img-col {
+            width: 617px;
+            min-height: 382px;
             position: relative;
-            @include dotted-background(-40px, auto, auto, -30px);
-            @media (max-width: 1420px) 
-            {
-                &::after
-                {
-                    display: none;
-                }
+            @include rounded(10px);
+            background: linear-gradient(180deg, #B0FFC4 -3.71%, #47C972 72.14%); 
+            max-width: 100%;
+    
+            @media (max-width: 768px) {
+              background: none;
+              margin-left: 30px;
+              min-height: 0;
             }
-      
-            @media (max-width:1500px)
-            {
-              margin-left: auto;
-              margin-right: auto;
-            }
-      
-            .seo-img-col {
-              width: 617px;
-              min-height: 382px;
+    
+            .seo-img {
+              max-width: 604px;
+              width: 100%;
+              height: auto;
               position: relative;
-              @include rounded(10px);
-              background: linear-gradient(180deg, #B0FFC4 -3.71%, #47C972 72.14%); 
-              max-width: 100%;
-      
-              @media (max-width: 768px) {
-                background: none;
-                margin-left: 30px;
-                min-height: 0;
-              }
-      
-              .seo-img {
-                max-width: 604px;
-                width: 100%;
-                height: auto;
-                position: relative;
-                top: 30px;
-                left: -20px;
-                box-shadow: 0px 20px 40px 0px #00000026;  
-              }
+              top: 30px;
+              left: -20px;
+              box-shadow: 0px 20px 40px 0px #00000026;  
             }
+          }
 
             //bottom dots image
             &::before {
