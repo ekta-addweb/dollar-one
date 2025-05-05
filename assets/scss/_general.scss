@@ -1,0 +1,206 @@
+// General Style
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+  }
+
+
+body {
+
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
+	-webkit-overflow-scrolling: touch;
+	font-family: "DM Sans", sans-serif;
+	background-color: $white !important;
+	overflow-x: hidden !important;
+}
+
+html
+{
+	overflow-x: hidden !important;
+}
+/* COMMON DESIGN START */
+
+a {
+	text-decoration: none;
+	transition: 0.5s all ease;
+ &:hover {
+ text-decoration: none;
+}
+}
+h1, h2, h3, h4, h5, h6, p, ul li {
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+}
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+ol {
+	margin: 0;
+	padding: 0;
+ li {
+ list-style-position: inside;
+}
+}
+/* COMMON DESIGN END */
+
+/*self created css*/
+
+// Container
+.container 
+{
+	width: 100%;
+	margin: 0 auto;
+	max-width: 1536px;
+	padding-left: 20px; 
+	padding-right: 20px;
+}
+  
+// Images
+img 
+{
+	max-width: 100%;
+	height: auto;
+}
+
+/*sections padding style*/
+.section-padding-wapper {
+	padding: 80px 0;
+  
+	@media (max-width: 992px) { 
+	  padding: 60px 0;
+	}
+  
+	@media (max-width: 576px) { 
+	  padding: 10px 0;
+	}
+}
+
+/*button style*/
+
+.btn {
+	padding: 12px 40px;
+
+	&:hover{
+		border: 1px solid $primary-green !important;
+	}
+	@media (max-width: 992px) { // Tablet
+		padding: 10px 32px;
+	  }
+	
+	  @media (max-width: 576px) { // Mobile
+		padding: 8px 24px;
+	  }
+  }
+
+.btn-green
+{
+	background-color: $primary-green;
+	color: $white;
+	@include rounded(10px);
+    @include text-style(500,16px,28px,0%);
+
+	@media (max-width: 992px) { // Tablet
+		@include text-style(500, 15px, 26px, 0%);
+	}
+	
+	  @media (max-width: 576px) { // Mobile
+		@include text-style(500, 14px, 24px, 0%);
+	}
+}
+
+.login-btn
+{
+	background-color: $white;
+	@include rounded(10px);
+	color: $primary-green;
+}
+
+
+/*title text style*/
+
+	.section-title {
+	position: relative;
+	display: inline-block;
+	font-weight: 700;
+	font-size: 64px;
+	line-height: 50px;
+	text-transform: capitalize;
+	margin-bottom: 80px;
+
+	@media (max-width: 992px) { // Tablet
+	  font-size: 48px;
+	  line-height: 44px;
+	  margin-bottom: 60px;
+	}
+
+	@media (max-width: 576px) { // Mobile
+	  font-size: 36px;
+	  line-height: 40px;
+	  margin-bottom: 40px;
+	}
+  }
+  
+  .pink-underline {
+	position: absolute;
+	bottom: -9px;
+	right: 0;
+	z-index: -1;
+
+	@media (max-width:576px)
+	{
+		bottom: -5px;
+	}
+  }
+  
+
+/*definition style*/
+.definition{
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 28px;
+
+	@media (max-width: 1400px) {
+	  font-size: 18px;
+	  line-height: 26px;
+	}
+
+	@media (max-width: 768px) {
+	  font-size: 15px;
+	  line-height: 24px;
+	}
+}
+
+/*list style*/
+.seo-left-list {
+  
+	li {
+	  position: relative;
+	  margin-bottom: 24px;
+	  padding-left: 50px;
+	  width: 50%;
+	  float: left;
+  
+	  &::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: url('../../../assets/images/right-tik.svg') no-repeat;
+		width: 36px;
+		height: 36px;
+		background-size: contain;
+	  }
+  
+	  @media (max-width: 768px) {
+		width: 100%;
+		float: none;
+	  }
+	}
+  }

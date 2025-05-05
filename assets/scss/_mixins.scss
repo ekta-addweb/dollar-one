@@ -1,0 +1,294 @@
+// Mixins
+
+@mixin box-shadow($shadows...) {
+    box-shadow: $shadows;
+    -moz-box-shadow: $shadows;
+    -webkit-box-shadow: $shadows;
+}
+
+@mixin border($direction, $width, $style, $color) {
+    border-#{$direction}: $width $style $color;
+}
+
+@mixin rounded($radius) {
+    border-radius: $radius;
+    -moz-border-radius: $radius;
+    -webkit-border-radius: $radius;
+}
+
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
+@mixin grayfilter {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+@mixin gradientborder {
+    background: rgba(0, 0, 0, 0) -webkit-linear-gradient(left, #81ee8e 0%, #11C6E7 100%) repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) linear-gradient(to right, #81ee8e 0%, #11C6E7 100%) repeat scroll 0 0;
+}
+
+@mixin bottomshade {
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.7) 100%);
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.7) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+@mixin overlay-left-right-white {
+    background: -moz-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(80%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(255, 255, 255, 0)));
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0) 100%);
+    background: -o-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0) 100%);
+    background: -ms-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1);
+}
+
+@mixin flexcol {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+@mixin flexrow {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+
+@mixin flexrowajcenter {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+
+@mixin flex100 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+@mixin text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4)) {
+    text-shadow: $x $y $blur $color;
+}
+
+@mixin transY-50 {
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+}
+
+@mixin background-opacity($color, $opacity: 0.3) {
+    background: rgba($color, $opacity);
+}
+
+@mixin color-opacity($color, $opacity: 0.3) {
+    color: rgba($color, $opacity);
+}
+
+@mixin button-solid($bg) {
+    background: $bg;
+    border: 2px solid $bg;
+    &:hover {
+        background: transparent;
+        transition: all 0.3s ease;
+    }
+    &:active {
+        background: $bg;
+    }
+}
+
+@mixin button-border($bg) {
+    background: transparent;
+    border: 2px solid $bg;
+    &:hover {
+        background: $bg;
+        transition: all 0.3s ease;
+    }
+    &:active {
+        border: 1px solid $bg;
+    }
+}
+
+@mixin placeholder-color($color) {
+    &::-webkit-input-placeholder {
+        /* WebKit browsers */
+        color: $color;
+    }
+    &:-moz-placeholder {
+        /* Mozilla Firefox 4 to 18 */
+        color: $color;
+    }
+    &::-moz-placeholder {
+        /* Mozilla Firefox 19+ */
+        color: $color;
+    }
+    &:-ms-input-placeholder {
+        /* Internet Explorer 10+ */
+        color: $color;
+    }
+}
+
+/*self created mixins*/
+
+//mixin for font style
+@mixin text-style($weight, $size, $line-height,$letter-spacing) {
+	font-weight: $weight;
+	font-size: $size;
+	line-height: $line-height;
+    letter-spacing: $letter-spacing;
+}
+
+//dots style mixins
+@mixin dotted-background($top: 0, $bottom: 0, $left: 0, $right: 0, $z-index: -1) {
+    &::after {
+      content: "";
+      position: absolute;
+      top: $top;
+      bottom: $bottom;
+      left: $left;
+      right: $right;
+      background: url('../../../assets/images/dots.svg');
+      width: 166px;
+      height: 108px;
+      z-index: $z-index;
+      opacity: 0.3;
+    }
+}
+
+// mixin for side-square
+@mixin side-square($img-path: '../../../assets/images/side-square.svg', $width: 344px, $height: 344px, $top: 0, $left: 0 , $right: 0) {
+    &::after {
+      content: "";
+      position: absolute;
+      top: $top;
+      left: $left;
+      right: $right;
+      background: url(#{$img-path});
+      background-repeat: no-repeat;
+      width: $width;
+      height: $height;
+    }
+}
+
+//section half background mixins
+@mixin highlight-background(
+  $top: 0,
+  $bottom: auto,
+  $left: 0,
+  $right: auto,
+  $radius-top-right: 60px,
+  $radius-bottom-right: 60px,
+  $radius-top-left: 0px,
+  $radius-bottom-left: 0px,
+) 
+{
+  &::before {
+    content: "";
+    position: absolute;
+    top: $top;
+    bottom: $bottom;
+    left: $left;
+    right: $right;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(239, 255, 232, 0.4);
+    border-top-right-radius: $radius-top-right;
+    border-bottom-right-radius: $radius-bottom-right;
+    border-top-left-radius: $radius-top-left;
+    border-bottom-left-radius: $radius-bottom-left;
+    z-index: -1;
+  }
+}
+
+
+//rounded green background 
+@mixin rounded-green-bg(
+  $top: 0,
+  $bottom: auto,
+  $left: auto,
+  $right: 0,
+  $width: 537px,
+  $radius-top-left: 60px,
+  $radius-top-right: 0,
+  $radius-bottom-left: 60px,
+  $radius-bottom-right: 0
+) {
+  &::before {
+    content: "";
+    position: absolute;
+    top: $top;
+    bottom: $bottom;
+    left: $left;
+    right: $right;
+    height: 100%;
+    width: $width;
+    background: linear-gradient(180deg, #B0FFC4 -3.71%, #47C972 72.14%);
+    border-top-left-radius: $radius-top-left;
+    border-top-right-radius: $radius-top-right;
+    border-bottom-left-radius: $radius-bottom-left;
+    border-bottom-right-radius: $radius-bottom-right;
+  }
+}
+
+/*pink dots mixins*/
+@mixin pink-dots(
+  $top: auto,
+  $right: auto,
+  $bottom: auto,
+  $left: auto
+) {
+  content: "";
+  position: absolute;
+  background: url('/assets/images/pink-dots.png') no-repeat;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  display: block;
+  z-index: -1;
+}
+
+
+/*support section element*/
+@mixin support-pink-element(
+  $top: auto,
+  $right: auto,
+  $bottom: auto,
+  $left: auto,
+  $transform: rotate(-180deg)
+) {
+  content: "";
+  position: absolute;
+  background: url('/assets/images/support-element1.svg') no-repeat;
+  width: 115px;
+  height: 132px;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  transform: $transform;
+  display: block;
+  z-index: -1;
+}
+
+
+
+
+
+
+
+  
+  

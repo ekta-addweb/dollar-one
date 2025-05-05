@@ -1,0 +1,25 @@
+/*button style*/
+
+.btn {
+	padding: 12px 40px;
+
+	&:hover{
+		border: 2px solid $primary-green;
+	}
+  }
+
+.btn-green
+{
+	background-color: $primary-green;
+	color: $white;
+	@include rounded(10px);
+    @include text-style(500,16px,28px,0%);
+}
+
+/*log in button*/
+.login-btn
+{
+    background-color: $white;
+    color: $primary-green;
+    border: 1px solid black;
+}

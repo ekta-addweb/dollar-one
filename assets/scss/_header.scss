@@ -1,0 +1,80 @@
+.header-main {
+  
+    .navbar-nav {
+      gap: 32px;
+  
+      .nav-link {
+        color: $description;
+        @include text-style(500, 20px, 28px, 0%);
+        padding: 0;
+      }
+  
+      .feature {
+        position: relative;
+  
+        .features-dropdown {
+          display: none;
+          position: absolute;
+          width: 140px;
+          top: 100%;
+          left: 0;
+          text-align: center;
+          z-index: 1000;
+          padding: 10px 0;
+          @include rounded(10px);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  
+          li {
+            padding: 5px;
+  
+            a {
+              color: #2e2e2e;
+              display: block;
+            }
+          }
+        }
+  
+        &:hover .features-dropdown {
+          display: block;
+        }
+      }
+    }
+  
+    @media (max-width: 768px) {
+      .navbar-nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+  
+      .feature {
+        .features-dropdown {
+          position: relative;
+          top: auto;
+          left: auto;
+          box-shadow: none;
+          padding-left: 20px;
+        }
+      }
+  
+      .btn {
+        margin-top: 20px;
+        width: 100%;
+      }
+      .login-btn
+      {
+        border: 2px solid $primary-green;
+      }
+    }
+  }
+
+  @media (max-width: 991px) and (min-width: 700px) {
+    .navbar-collapse > .d-flex {
+      justify-content: center;
+      align-items: center;
+      flex-direction: row !important;
+      margin-top: 20px;
+    }
+  }
+  
+
+  

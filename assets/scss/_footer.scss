@@ -1,0 +1,201 @@
+/*footer start*/
+.footer {
+    background-color: $background-color;
+    position: relative;
+    z-index: 11;
+
+    &::before
+    {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0px;
+      background: url('../../../assets/images/footer-cricle.svg');
+      background-repeat: no-repeat;  
+      width: 500px;
+      height: 600px;
+      z-index: -1;
+    }
+
+    &::after{
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background : url('../../../assets/images/footer-Rectangle.svg');
+      background-repeat: no-repeat;
+      max-width: 500px;
+      width: 100%;
+      height: 250px;
+
+      @media (max-width: 1200px){
+        opacity: 0;
+      }
+    }
+
+    .footer-row{
+      gap: 0px;
+
+      @media (max-width: 990px) {
+        gap: 20px;
+      }
+
+      .footer-col {
+        margin: 0;
+        padding: 0;
+
+        .footer-title {
+          @include text-style(600, 20px, 28px, 1.09px);
+          text-transform: uppercase;
+          color: $primary-green;
+          position: relative;
+          display: inline-block;
+          padding: 0;
+          margin: 0;
+
+            .pink-underline {
+              bottom: 0px;
+              left: 0;
+              width: 80%;
+              height: auto;
+              z-index: 1;
+              opacity: 0.8;
+            }
+        }
+      
+        li {
+          @include text-style(400, 16px, 24px, 0%);
+          margin-top: 16px;
+        }
+
+        a{
+            color: $primary-green;
+        }
+  
+        #newsletter1 {
+          width: 100%;
+          height: 52px;
+          margin-top: 16px;
+        }
+  
+        .btn {
+          margin-top: 10px;
+          height: 52px;
+          width: 100%;
+  
+          @media (min-width: 576px) {
+            width: auto;
+            margin-left: 0;
+          }
+        }
+  
+        .copy-right {
+          @include text-style(400, 14px, 0px, 0%);
+          text-align: center;
+          color: $description;
+        }
+      }
+      
+      //footer col 1
+      .f-col-1 {
+        p {
+          @include text-style(400, 13px, 28px, 0%);
+          color: $primary-green;
+          margin-bottom: 24px;
+          margin-top: 10px;
+        }
+
+        li {
+          display: inline;
+          margin-right: 5px;
+        }
+  
+        .fa-google,.fa-twitter,.fa-instagram,.fa-linkedin 
+        {
+          width: 42px;
+          height: 40px;
+          background-color: $primary-green;
+          @include rounded(50%);
+          color: $white;
+          @include text-style(400, 16px, 40px, 0%);
+          text-align: center;
+        }
+      }
+
+      //footer col 3
+      .f-col-3
+      {
+        @media (max-width: 990px)
+        {
+          margin-top: -190px;
+        }
+        @media (max-width: 767px)
+        {
+          margin-top: 0;
+        }
+      }
+      
+      //footer col 4
+      .f-col4 {
+        li {
+          border-bottom: 1px solid rgba(74, 74, 74, 0.3);
+          padding-bottom: 16px;
+          margin-right: 40px;
+      
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+      }
+
+      //footer col 5
+      .f-col-5{
+        border-left: 1px solid $primary-green;
+        padding-left: 40px;
+        height: 240px;
+
+        .pink-underline{
+          margin-bottom: -4px;
+          margin-left: 60px;
+        }
+
+        @media (max-width: 990px)
+        {
+          padding-left: 5px;
+          margin-top: -150px;
+          height: 180px;
+        }
+        @media (max-width: 780px)
+        {
+          margin-top: 0;
+        }
+        @media (max-width: 600px)
+        {
+          padding-left: 10px;
+          height: 210px;
+        }
+      }
+
+    .footer-email-form {
+        background-color: $white;
+        border-radius: 10px;
+        display: inline-block;
+        max-width: 372px;
+        width: 100%;
+    }
+
+    .footer-email-form input {
+        border: none;
+        height: 52px;
+        font-size: 16px;
+        line-height: 20px;
+        color: $primary-green;
+        font-weight: 500;
+        border-radius: 10px;
+    }
+    .update-note
+    {
+        color: $description;
+    }
+  }
+}
